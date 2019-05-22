@@ -1,0 +1,161 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>DBO@TEI</title>
+        <respStmt>
+          <resp>Data modelling and conversion by:</resp>
+          <name>Jack T. Bowers</name>
+          <name>Daniel Schopper</name>
+        </respStmt>
+      </titleStmt>
+      <editionStmt>
+        <edition>Second TEI edition of DBOE database, created<date>2016-10-13</date>.</edition>
+      </editionStmt>
+      <publicationStmt>
+        <p>Publication Information to be elaborated in following versions</p>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Source of current file is<ptr target="file:////w07ds2.oeaw.ads/acdh_resources$/container/R_dboe_4952/105_derived_xml/bel_d/bel_d-tei-02/d175_qdb-TEI-02.xml"/>which was converted from version 09 of the plain XML version of the DBOE</p>
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc>
+      <editorialDecl>
+        <p>
+          <label>On conversion of phonetic transcriptions</label>:
+                            Conversion of the originalTustep/Teutonista phonetic transcriptions are made in stages in copies of the elements with these contents (TEI:<gi>pron</gi>@<att>notation</att>="<val>tustep</val>", and<gi>quote</gi>,
+                            (originally TUSTEP: *KT*, *LT*, and *LW*). The copied element for IPA conversion all contain the attributes @<att>change</att>, and@<att>resp</att>, the value of  @<att>change</att>will be the number of change processes
+                            carried out on the elements contents (each change will be documented with the script or replacements made). The value of  @<att>resp</att>is the person or persons responsible for the changes.
+                            The copied<gi>pron</gi>element also has the attribute-value pair @<att>notation</att>="<val>ipa</val>", even throughout the transitional period during which the reality is that it is a mixture of IPA and Tustep/Teutonista phonetic transcription.
+                            Currently the copies of<gi>quote</gi>from contextual examples of usage of dialect forms (Tustep: *KT*) does not have @<att>notation</att>as this is not allowed in the current TEI guidelines and for the interest of simplicity in the access and sharing of this dataset
+                            at least in its early stages, we are deciding not to make alterations to the schema via TEI ODD language. Later steps may choose one of three ways to deal with this:
+                            1)propose changes to the TEI schema allowing @<att>notation</att>to occur in<gi>quote</gi>;
+                            2) make an ODD and use schema to allow for necessary alterations;
+                            3) use @<att>xml:lang</att>according to BCP 47 in which we can specify the notation following the language tag. This would however require changes to out current usage of @<att>xml:lang</att>, which for the bavarian dialect data, is simpy declared in<gi>entry</gi>because of certain factors having to do with the legacy structure of the data records.
+                            Finally, despite the current inconsistancy in the use of @<att>notation</att>between the 3 datatypes being converted to IPA, the altered version of the phonetic transcriptions are (as of this 1st version) nonetheless minimally distinguishable in their XPath by the presence of @<att>change</att>, and@<att>resp</att>within the same element, be that<gi>pron</gi>, or<gi>quote</gi>.</p>
+      </editorialDecl>
+      <geoDecl>Geo-locational references made in this document (found in: ../<gi>usg</gi>[@<att>type</att>="<val>geo</val>"]/<gi>placeName</gi>) all are references from the DBOE place inventory contained in<ptr target="file:/C:/Users/jbowers/Desktop/dboe_tei_modelling/data/places.xml"/>.
+                        Later versions of files may link directly using<gi>prefixDef</gi>.</geoDecl>
+      <listPrefixDef>
+        <prefixDef ident="this" matchPattern="this:ANM([0-9]+)" replacementPattern="#xpath(ancestor::entry//note[@type = 'anmerkung'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:LT([0-9]+)" replacementPattern="#xpath(ancestor::entry//form[@type = 'lautung'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:LW([0-9]+)" replacementPattern="#xpath(ancestor::entry//form[@type = 'lehnwort'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:LW" replacementPattern="#xpath(ancestor::entry//form[@type = 'lehnwort'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:BD" replacementPattern="#xpath(ancestor::entry//def[position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:BD[2]" replacementPattern="#xpath(ancestor::entry//def[2])"/>
+        <prefixDef ident="this" matchPattern="this:BD[3]" replacementPattern="#xpath(ancestor::entry//def[3])"/>
+        <prefixDef ident="this" matchPattern="this:BD[4]" replacementPattern="#xpath(ancestor::entry//def[4])"/>
+        <prefixDef ident="this" matchPattern="this:BD[5]" replacementPattern="#xpath(ancestor::entry//def[5])"/>
+        <prefixDef ident="this" matchPattern="this:BD[6]" replacementPattern="#xpath(ancestor::entry//def[6])"/>
+        <prefixDef ident="this" matchPattern="this:BD([0-9]+)" replacementPattern="#xpath(ancestor::entry//def[position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:DV" replacementPattern="#xpath(ancestor::entry//note[@type='diverse'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:ET[1]" replacementPattern="#xpath(ancestor::entry//etym[1])"/>
+        <prefixDef ident="this" matchPattern="this:ET[2]" replacementPattern="#xpath(ancestor::entry//etym[2])"/>
+        <prefixDef ident="this" matchPattern="this:ET[3]" replacementPattern="#xpath(ancestor::entry//etym[3])"/>
+        <prefixDef ident="this" matchPattern="this:ET[4]" replacementPattern="#xpath(ancestor::entry//etym[4])"/>
+        <prefixDef ident="this" matchPattern="this:BILDDAT" replacementPattern="#xpath(ancestor::entry//figure[position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:HL([0-9]+)" replacementPattern="#xpath(ancestor::entry//form[@type = 'hauptlemma'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:J" replacementPattern="#xpath(ancestor::entry//ref/date[position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:KT([0-9]+)" replacementPattern="#xpath(ancestor::entry//cit[@type = 'kontext'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:NB([0-9]+)" replacementPattern="#xpath(ancestor::entry//note[@type = 'notabene'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:NR([0-9]+)" replacementPattern="#xpath(ancestor::entry//ref[@type = 'fragebogenNummer'][position() = '$1'])"/>
+        <prefixDef ident="this" matchPattern="this:VL([0-9]+)" replacementPattern="#xpath(ancestor::entry//form[@type = 'verweise'][position() = '$1'])"/>
+        <!--For all pointers to a single 'WBD/KT': Note!,... this points to an element which isn't actually tagged yet! For this pointer to function, the words/lautungen in 'kontext' need to be tagged as 'pRef' elements so their meaning defined in 'WBD/KT' can be attributed to them-->
+        <prefixDef ident="this" matchPattern="this:WBD/KT([0-9]+)" replacementPattern="#xpath(ancestor::entry//cit[@type='kontext']/quote/pRef[position() = '$1'])"/>
+      </listPrefixDef>
+    </encodingDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <entry xml:id="d175_qdb-d1e2" xml:lang="bar">
+        <form type="hauptlemma">
+          <orth type="orig">Treib'</orth>
+          <orth type="normalized">Treib</orth>
+        </form>
+        <gramGrp>
+          <pos>Subst</pos>
+        </gramGrp>
+        <form type="lautung" n="1">
+          <pron notation="tustep">Der Traib</pron>
+          <pron notation="ipa" resp="#JB" change="01">Der Traib</pron>
+          <gramGrp>
+            <gram>[m+A]</gram>
+          </gramGrp>
+        </form>
+        <sense corresp="this:LT1">
+          <def xml:lang="de">Viehtrieb</def>
+        </sense>
+        <note type="anmerkung" resp="O" corresp="this:LT1">hist.</note>
+        <form type="nebenlemma">
+          <orth type="orig">Tr-eib</orth>
+          <gramGrp>
+            <pos>Subst</pos>
+          </gramGrp>
+          <orth type="normalized">Treib</orth>
+        </form>
+        <ref type="archiv">HK 175, t175^#1.1 = t1750914.pir^#1.1</ref>
+        <ref type="quelle">Bayer.Wb.
+          <bibl type="quelleZitierte">MB.</bibl>
+          <date>1466</date>
+          <ref type="seite">1,640XXIII,535</ref>
+        </ref>
+        <ref type="quelleBearbeitet">{X} Bair.Spr.Geb.  BayerWb.²</ref>
+      </entry>
+      <entry xml:id="d175_qdb-d1e35" xml:lang="bar">
+        <form type="hauptlemma">
+          <orth type="orig">(Fer)treib</orth>
+          <orth type="normalized">Fertreib</orth>
+        </form>
+        <gramGrp>
+          <pos>Subst</pos>
+        </gramGrp>
+        <cit type="kontext" n="1">
+          <quote>mit langer weil vertreib [sg3]</quote>
+          <quote resp="#JB" change="01">mit langer weil vertreib</quote>
+          <def xml:lang="de" corresp="this:WBD/KT1">Zeitvertreib</def>
+        </cit>
+        <cit type="kontext" n="2">
+          <quote>mit langer ^zeit und weil vertreib [sg3]</quote>
+          <quote resp="#JB" change="01">mit langer ^zeit und weil vertreib</quote>
+          <def xml:lang="de" corresp="this:WBD/KT2">Zeitvertreib</def>
+        </cit>
+        <ref type="archiv">HK 175, t175^#1.10 = t1750914.pir^#2.1</ref>
+        <ref type="quelle">Oswald v.Wolk. hg.Schatz (1904), Schatz</ref>
+        <ref type="quelleBearbeitet">{1A.4d05} unt.STir.Pustert.:nöSTir. (hist.-lit.)  OSWALD· (u.1425/1904) S./ev.Liednr.,V. [H-4722: ["Gedichte"/Ausg.Schatz] ** Exz.Schatz (LiedNr.,V.)</ref>
+        <usg type="geo">
+          <placeName type="orig">Umg.Rodeneck STir.</placeName>
+          <listPlace ref="sigle:1A.4d05">
+              <place type="Bundesland">
+                <placeName>STir.</placeName>
+                <idno>1A</idno>
+                <listPlace>
+                  <place type="Großregion">
+                    <placeName>öSTir.</placeName>
+                    <idno>1A.4</idno>
+                    <listPlace>
+                      <place type="Kleinregion">
+                        <placeName>unt.STir.Pustert.</placeName>
+                        <idno>1A.4d</idno>
+                        <listPlace>
+                          <place type="Gemeinde">
+                            <placeName>Rodeneck</placeName>
+                            <idno/>
+                            <listPlace>
+                              <place type="Ort">
+                                <placeName>Rodeneck, Rodengo</placeName>
+                                <idno>1A.4d05</idno>
+                              </place>
+                            </listPlace>
+                          </place>
+                        </listPlace>
+                      </place>
+                    </listPlace>
+                  </place>
+                </listPlace>
+              </place>
+            </listPlace>
+        </usg>
+      </entry>
+ </body>
+  </text>
+</TEI>
