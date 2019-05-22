@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe1e781b-d231-4752-a512-0fb02f6e90fe" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ErD.mwb" afterPath="$PROJECT_DIR$/SupportingFiles/ErD.mwb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ResetAutoIncrements.sql" afterPath="$PROJECT_DIR$/SupportingFiles/ResetAutoIncrements.sql" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SampleXmL.xml" afterPath="$PROJECT_DIR$/SupportingFiles/SampleXmL.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SampleXmL.xml.pdf" afterPath="$PROJECT_DIR$/SupportingFiles/SampleXmL.xml.pdf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Schema.sql" afterPath="$PROJECT_DIR$/SupportingFiles/Schema.sql" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ShowAllResult.sql" afterPath="$PROJECT_DIR$/SupportingFiles/ShowAllResult.sql" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/TEI_XML_DB.sql" afterPath="$PROJECT_DIR$/SupportingFiles/TEI_XML_DB.sql" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/d154_156_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d154_156_qdb-TEI-02.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/d157_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d157_qdb-TEI-02.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/d158_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d158_qdb-TEI-02.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/d175_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d175_qdb-TEI-02.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frage-fragebogen-full-tgd01.xml" afterPath="$PROJECT_DIR$/SupportingFiles/frage-fragebogen-full-tgd01.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/newRel.sql" afterPath="$PROJECT_DIR$/SupportingFiles/newRel.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Untitled.mwb" afterPath="$PROJECT_DIR$/SupportingFiles/Untitled.mwb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Untitled.mwb.bak" afterPath="$PROJECT_DIR$/SupportingFiles/Untitled.mwb.bak" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test.xml" afterPath="$PROJECT_DIR$/SupportingFiles/test.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/testUpdated.xml" afterPath="$PROJECT_DIR$/SupportingFiles/testUpdated.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,8 +101,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="327" />
-    <option name="y" value="23" />
+    <option name="x" value="1715" />
+    <option name="y" value="206" />
     <option name="width" value="1113" />
     <option name="height" value="745" />
   </component>
@@ -162,11 +153,6 @@
             <path>
               <item name="XMLHandler" type="b2602c69:ProjectViewProjectNode" />
               <item name="XMLHandler" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="XMLHandler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="XMLHandler" type="462c0819:PsiDirectoryNode" />
-              <item name="SupportingFiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="XMLHandler" type="b2602c69:ProjectViewProjectNode" />
@@ -265,7 +251,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="327" y="23" width="1113" height="745" extended-state="0" />
+    <frame x="1715" y="206" width="1113" height="745" extended-state="0" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2847806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -295,7 +281,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
@@ -326,7 +312,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -369,7 +355,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -410,7 +396,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -508,7 +494,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -523,7 +509,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testUpdated.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/testUpdated.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
@@ -551,14 +537,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testUpdated.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/testUpdated.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18807">
           <caret line="106126" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="301024" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
