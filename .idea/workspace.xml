@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe1e781b-d231-4752-a512-0fb02f6e90fe" name="Default" comment="" />
+    <list default="true" id="fe1e781b-d231-4752-a512-0fb02f6e90fe" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ErD.mwb" afterPath="$PROJECT_DIR$/SupportingFiles/ErD.mwb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ResetAutoIncrements.sql" afterPath="$PROJECT_DIR$/SupportingFiles/ResetAutoIncrements.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SampleXmL.xml" afterPath="$PROJECT_DIR$/SupportingFiles/SampleXmL.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/SampleXmL.xml.pdf" afterPath="$PROJECT_DIR$/SupportingFiles/SampleXmL.xml.pdf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Schema.sql" afterPath="$PROJECT_DIR$/SupportingFiles/Schema.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ShowAllResult.sql" afterPath="$PROJECT_DIR$/SupportingFiles/ShowAllResult.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/TEI_XML_DB.sql" afterPath="$PROJECT_DIR$/SupportingFiles/TEI_XML_DB.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/d154_156_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d154_156_qdb-TEI-02.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/d157_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d157_qdb-TEI-02.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/d158_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d158_qdb-TEI-02.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/d175_qdb-TEI-02.xml" afterPath="$PROJECT_DIR$/SupportingFiles/d175_qdb-TEI-02.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frage-fragebogen-full-tgd01.xml" afterPath="$PROJECT_DIR$/SupportingFiles/frage-fragebogen-full-tgd01.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/newRel.sql" afterPath="$PROJECT_DIR$/SupportingFiles/newRel.sql" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="XMLParser_Xpath.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="XMLParser_Xpath.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/XMLParser_Xpath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="-267">
               <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -23,18 +37,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="termcolor.py" pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/termcolor.py">
+      <file leaf-file-name="SampleXmL.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1545">
-              <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state relative-caret-position="333">
+              <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TEI_XML_DB_handler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TEI_XML_DB_handler.py">
+      <file leaf-file-name="Schema.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SupportingFiles/Schema.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-698">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowAllResult.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SupportingFiles/ShowAllResult.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -43,33 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handleDB.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TEIXMLDB/handleDB.py">
+      <file leaf-file-name="TEI_XML_DB.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SupportingFiles/TEI_XML_DB.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5985">
-              <caret line="404" column="12" lean-forward="false" selection-start-line="404" selection-start-column="12" selection-end-line="404" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="d157_qdb-TEI-02.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/d157_qdb-TEI-02.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SampleXmL.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1455">
-              <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+            <state relative-caret-position="-500">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,6 +90,9 @@
     <findStrings>
       <find>Fb-53</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -135,6 +140,7 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -160,7 +166,7 @@
             <path>
               <item name="XMLHandler" type="b2602c69:ProjectViewProjectNode" />
               <item name="XMLHandler" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="SupportingFiles" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="XMLHandler" type="b2602c69:ProjectViewProjectNode" />
@@ -171,13 +177,18 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/SupportingFiles" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -256,11 +267,11 @@
   <component name="ToolWindowManager">
     <frame x="327" y="23" width="1113" height="745" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17553689" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2847806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37692308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37692308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -284,31 +295,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TEIXMLReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/XMLParser_Xpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -317,7 +303,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/d175_qdb-TEI-02.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/d175_qdb-TEI-02.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="87" lean-forward="false" selection-start-line="12" selection-start-column="87" selection-end-line="12" selection-end-column="87" />
@@ -332,7 +318,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="40" />
@@ -375,7 +361,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="40" />
@@ -391,7 +377,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/d175_qdb-TEI-02.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/d175_qdb-TEI-02.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2233020">
           <caret line="148868" column="0" lean-forward="false" selection-start-line="148868" selection-start-column="0" selection-end-line="148868" selection-end-column="0" />
@@ -416,7 +402,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="40" />
@@ -432,7 +418,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/d175_qdb-TEI-02.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/d175_qdb-TEI-02.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2233020">
           <caret line="148868" column="0" lean-forward="false" selection-start-line="148868" selection-start-column="0" selection-end-line="148868" selection-end-column="0" />
@@ -447,7 +433,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2370">
           <caret line="158" column="9" lean-forward="false" selection-start-line="158" selection-start-column="9" selection-end-line="158" selection-end-column="9" />
@@ -472,7 +458,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2370">
           <caret line="158" column="9" lean-forward="false" selection-start-line="158" selection-start-column="9" selection-end-line="158" selection-end-column="9" />
@@ -497,7 +483,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2370">
           <caret line="158" column="9" lean-forward="false" selection-start-line="158" selection-start-column="9" selection-end-line="158" selection-end-column="9" />
@@ -530,7 +516,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frage-fragebogen-full-tgd01.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/frage-fragebogen-full-tgd01.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="19" />
@@ -558,7 +544,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frage-fragebogen-full-tgd01.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/frage-fragebogen-full-tgd01.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="96" />
@@ -623,23 +609,7 @@
       </provider>
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/MySQLdb/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/SampleXmL.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d157_qdb-TEI-02.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/d175_qdb-TEI-02.xml">
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/d175_qdb-TEI-02.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2233020">
           <caret line="148868" column="0" lean-forward="false" selection-start-line="148868" selection-start-column="0" selection-end-line="148868" selection-end-column="0" />
@@ -649,7 +619,7 @@
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/termcolor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1545">
+        <state relative-caret-position="584">
           <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
         </state>
@@ -665,21 +635,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TEIXMLDB/handleDB.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5985">
+        <state relative-caret-position="556">
           <caret line="404" column="12" lean-forward="false" selection-start-line="404" selection-start-column="12" selection-end-line="404" selection-end-column="12" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/d157_qdb-TEI-02.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/XMLParser_Xpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="-267">
           <caret line="35" column="51" lean-forward="false" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/SampleXmL.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/Schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-698">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/ShowAllResult.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SupportingFiles/TEI_XML_DB.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
