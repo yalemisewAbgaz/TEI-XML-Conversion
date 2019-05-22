@@ -27,8 +27,8 @@ class XMLParser:
     def readDirectory(self,rootdir):
         teiFiles=[]
         for subdir, dirs, files in os.walk(rootdir):
-            if dirs in ('bel_d-tei-02','bel_m-tei-02','bel_e-tei-02','bel_k-tei-02','bel_g-tei-02'):
-                continue
+            # if dirs in ('bel_d-tei-02','bel_m-tei-02','bel_e-tei-02','bel_k-tei-02','bel_g-tei-02'):
+            #     continue
             for file in files:
                 # print os.path.join(subdir, file)
                 filepath = subdir + os.sep + file
