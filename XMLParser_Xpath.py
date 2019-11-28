@@ -188,7 +188,7 @@ class XMLParser:
         print(t1, t0, (t1-t0))
 
 t0 = time.time()
-dir='/Users/yalemisew/ExploreAt/TEI-XML-2018'
+dir='/home/yabgaz/exploreat/Teixml/TEI-XML-2018'
 directory= os.fsencode(dir)
 xmlParse= XMLParser()
 teiFiles=xmlParse.readDirectory(dir)

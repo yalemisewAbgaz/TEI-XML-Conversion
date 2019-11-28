@@ -1,8 +1,6 @@
-from nltk.wsd import lesk
-from nltk.corpus import wordnet as wn
+
 import mysql.connector
 import mysql.connector.errorcode
-from mysql.connector import Error
 from termcolor import colored
 
 
@@ -10,16 +8,16 @@ from termcolor import colored
 class database:
 
     user = 'root'
-    password = 'ExploreAt!dbo2018'
+    password = ''
     host = '127.0.0.1'
+    port =3307
     db = 'TEI_XML_DB'
 
 
 
-    cnx = mysql.connector.connect(user='root', password='ExploreAt!dbo2018'
-                                  , host='127.0.0.1',
-                                  database='TEI_XML_DB',
-                                  auth_plugin='mysql_native_password',
+    cnx = mysql.connector.connect(user='root', password='Yale-Exp!-Dboe-2019'
+            , host='127.0.0.1',port= '3307',
+                                  database='TEI_XML_db',
                                   # use_pure=True # this is used to include  prepared= True statement to enhance prepared statement usage
                                   )
     cursor = cnx.cursor()
