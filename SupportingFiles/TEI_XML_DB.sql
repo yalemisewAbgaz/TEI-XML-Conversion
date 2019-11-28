@@ -27,7 +27,7 @@ CREATE TABLE `Citation` (
   `type` varchar(50) DEFAULT NULL,
   `n` int(11) DEFAULT NULL,
   PRIMARY KEY (`citationId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE `CitationDefinition` (
   KEY `DefinitionId_FK_idx` (`definitionId`),
   CONSTRAINT `CitationId_FK` FOREIGN KEY (`citationId`) REFERENCES `citation` (`citationId`),
   CONSTRAINT `DefinitionId_FK` FOREIGN KEY (`definitionId`) REFERENCES `definition` (`DefinitionId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `Definition` (
   `corresp` varchar(50) DEFAULT NULL,
   `definition` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`definitionId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +104,7 @@ CREATE TABLE `Entry` (
   `id` varchar(200) NOT NULL,
   `lang` char(50) DEFAULT NULL,
   PRIMARY KEY (`entryId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +132,7 @@ CREATE TABLE `Form` (
   PRIMARY KEY (`formId`),
   KEY `EntryId_idx` (`entryId`),
   CONSTRAINT `FormEntryId` FOREIGN KEY (`entryId`) REFERENCES `entry` (`entryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -159,7 +159,7 @@ CREATE TABLE `GrammarGroup` (
   PRIMARY KEY (`grammarGroupId`),
   KEY `EntryId_idx` (`entryId`),
   CONSTRAINT `EntryId` FOREIGN KEY (`entryId`) REFERENCES `entry` (`entryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +188,7 @@ CREATE TABLE `Note` (
   PRIMARY KEY (`noteId`),
   KEY `Entry_idx` (`entryid`),
   CONSTRAINT `NoteEntry` FOREIGN KEY (`entryid`) REFERENCES `entry` (`entryId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,7 +212,7 @@ CREATE TABLE `orth` (
   `type` varchar(50) DEFAULT NULL,
   `orth` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`orthId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +237,7 @@ CREATE TABLE `Place` (
   `name` varchar(50) DEFAULT NULL,
   `id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`placeId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -263,7 +263,7 @@ CREATE TABLE `pronunciation` (
   `change` varchar(50) DEFAULT NULL,
   `pron` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`pronunciationId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,7 +288,7 @@ CREATE TABLE `Reference` (
   `ref` varchar(300) DEFAULT NULL,
   `date` varchar(20) DEFAULT NULL COMMENT 'This field needs further treatment as there are dates of various formats in the tei/xml file.',
   PRIMARY KEY (`referenceId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -311,7 +311,7 @@ CREATE TABLE `Sense` (
   `senseId` int(11) NOT NULL AUTO_INCREMENT,
   `corresp` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`senseId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,7 +339,7 @@ CREATE TABLE `SenseDefinition` (
   KEY `DefinitionId_Sense_FK_idx` (`definitionId`),
   CONSTRAINT `DefinitionId_Sense_FK` FOREIGN KEY (`definitionId`) REFERENCES `definition` (`definitionId`),
   CONSTRAINT `SenseId_FK` FOREIGN KEY (`senseId`) REFERENCES `sense` (`senseId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -362,7 +362,7 @@ CREATE TABLE `usage` (
   `usageId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`usageId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
