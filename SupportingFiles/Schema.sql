@@ -18,7 +18,7 @@ DROP SCHEMA IF EXISTS `TEI_XML_db` ;
 -- -----------------------------------------------------
 -- Schema TEI_XML_db
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `TEI_XML_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+CREATE SCHEMA IF NOT EXISTS `TEI_XML_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci ;
 USE `TEI_XML_db` ;
 
 -- -----------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Bibliography` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Citation` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Definition` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Entry` (
 ENGINE = InnoDB
 AUTO_INCREMENT = 11
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Form` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`GrammarGroup` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -165,15 +165,15 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Note` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
 -- Table `TEI_XML_db`.`orth`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TEI_XML_db`.`orth` ;
+DROP TABLE IF EXISTS `TEI_XML_db`.`Orth` ;
 
-CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`orth` (
+CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Orth` (
   `orthId` INT(11) NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(50) NULL DEFAULT NULL,
   `orth` VARCHAR(300) NULL DEFAULT NULL,
@@ -185,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`orth` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -206,13 +206,13 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Place` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
 -- Table `TEI_XML_db`.`pronunciation`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TEI_XML_db`.`pronunciation` ;
+DROP TABLE IF EXISTS `TEI_XML_db`.`Pronunciation` ;
 
 CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`pronunciation` (
   `pronunciationId` INT(11) NOT NULL AUTO_INCREMENT,
@@ -223,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`pronunciation` (
   PRIMARY KEY (`pronunciationId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Quote` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -268,7 +268,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Reference` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
@@ -287,13 +287,13 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`Sense` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 -- -----------------------------------------------------
 -- Table `TEI_XML_db`.`usage`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TEI_XML_db`.`usage` ;
+DROP TABLE IF EXISTS `TEI_XML_db`.`Usage` ;
 
 CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`usage` (
   `usageId` INT(11) NOT NULL AUTO_INCREMENT,
@@ -306,7 +306,7 @@ CREATE TABLE IF NOT EXISTS `TEI_XML_db`.`usage` (
     REFERENCES `TEI_XML_db`.`entry` (`entryId`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
+COLLATE = utf8mb4_general_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
