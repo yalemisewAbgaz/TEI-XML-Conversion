@@ -9,12 +9,14 @@ class database:
     config.read('config.ini')
     dbName = config.get('mysql', 'mysql_db_name')
     dbHost = config.get('mysql', 'mysql_db_host')
+    dbPort = config.get('mysql', 'mysql_db_port')
     dbUser = config.get('mysql', 'mysql_db_user')
     dbPassword = config.get('mysql', 'mysql_db_password')
     dbAuthPlugin = config.get('mysql', 'mysql_auth_plugin')
 
     cnx = mysql.connector.connect(user=dbUser, password=dbPassword
                                   , host=dbHost,
+                                  port=dbPort,
                                   database=dbName,
                                   auth_plugin=dbAuthPlugin,
 
