@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> cdb6a8b87700def94138798c67a8bfc5c14dece3
 import mysql.connector
 import mysql.connector.errorcode
 from termcolor import colored
@@ -6,6 +10,7 @@ import configparser
 
 
 class database:
+<<<<<<< HEAD
     config = configparser.ConfigParser()
     config.read('config.ini')
     dbName= config.get('mysql', 'mysql_db_name')
@@ -19,6 +24,20 @@ class database:
                                   , host= dbHost,
                                   database=dbName,
                                   auth_plugin=dbAuthPlugin,
+=======
+
+    user = 'root'
+    password = ''
+    host = '127.0.0.1'
+    port =3307
+    db = 'TEI_XML_DB'
+
+
+
+    cnx = mysql.connector.connect(user='root', password='Yale-Exp!-Dboe-2019'
+            , host='127.0.0.1',port= '3307',
+                                  database='TEI_XML_db',
+>>>>>>> cdb6a8b87700def94138798c67a8bfc5c14dece3
                                   # use_pure=True # this is used to include  prepared= True statement to enhance prepared statement usage
                                   )
     cursor = cnx.cursor()
@@ -30,7 +49,7 @@ class database:
             # print("Saving Entry", entryId, entryLang)
             value = (entryId[0], entryLang[0])
             query = (
-                'insert ignore  entry (Id, Lang) values (%s, %s);')
+                'insert ignore  Entry (Id, Lang) values (%s, %s);')
             # print(query)
             self.cursor.execute(query,value)
             self.cnx.commit()
@@ -86,7 +105,7 @@ class database:
             # print("Saving GramGroup", entryId, pos)
             value = (tempPos, str(entryId))
             query = (
-                'insert ignore  Grammargroup ( pos, entry_entryid) values (%s,  %s);')
+                'insert ignore  GrammarGroup ( pos, entry_entryid) values (%s,  %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
@@ -150,7 +169,7 @@ class database:
             # print("Saving Orth", formId, type, orth)
             value =(tempType,tempOrth,str(formId))
             query = (
-                'insert ignore  orth (type,orth,Form_formid) values (%s,  %s,  %s);')
+                'insert ignore  Orth (type,orth,Form_formid) values (%s,  %s,  %s);')
 
             # print("orth",query,value)
 
@@ -306,7 +325,7 @@ class database:
             # print("Saving Citation", entryId, citType, citNo)
             value = (tempCitType,tempCitNo, str(entryId))
             query = (
-                'insert ignore  citation (type, n,entry_entryid) values (%s, %s, %s);')
+                'insert ignore  Citation (type, n,entry_entryid) values (%s, %s, %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
@@ -376,7 +395,7 @@ class database:
             # print("Saving usg",entryId, type)
             value = (tempType, tempRef, tempRefDate,str(entryId))
             query = (
-                'insert ignore  reference (type,ref, refDate, Entry_entryId) values (%s, %s, %s, %s);')
+                'insert ignore  Reference (type,ref, refDate, Entry_entryId) values (%s, %s, %s, %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
@@ -399,7 +418,7 @@ class database:
             # print("Saving Bibliography", entryId, type)
             value = (tempRefBiblType,tempRefBibl,str(referenceId), str(entryId))
             query = (
-                'insert ignore  bibliography (type, bibl, reference_referenceId, Reference_Entry_entryId)  values (%s, %s, %s, %s);')
+                'insert ignore  Bibliography (type, bibl, reference_referenceId, Reference_Entry_entryId)  values (%s, %s, %s, %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()

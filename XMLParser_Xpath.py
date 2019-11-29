@@ -192,10 +192,14 @@ class XMLParser:
         print(t1, t0, (t1-t0))
 
 t0 = time.time()
+<<<<<<< HEAD
 config = configparser.ConfigParser()
 config.read('config.ini')
 dir = config.get('app', 'input_folder')
 
+=======
+dir='/home/yabgaz/exploreat/Teixml/TEI-XML-2018'
+>>>>>>> cdb6a8b87700def94138798c67a8bfc5c14dece3
 directory= os.fsencode(dir)
 xmlParse= XMLParser()
 print(dir)
