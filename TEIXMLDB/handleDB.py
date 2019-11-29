@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> cdb6a8b87700def94138798c67a8bfc5c14dece3
 import mysql.connector
 import mysql.connector.errorcode
 from termcolor import colored
@@ -10,7 +7,7 @@ import configparser
 
 
 class database:
-<<<<<<< HEAD
+
     config = configparser.ConfigParser()
     config.read('config.ini')
     dbName= config.get('mysql', 'mysql_db_name')
@@ -24,20 +21,6 @@ class database:
                                   , host= dbHost,
                                   database=dbName,
                                   auth_plugin=dbAuthPlugin,
-=======
-
-    user = 'root'
-    password = ''
-    host = '127.0.0.1'
-    port =3307
-    db = 'TEI_XML_DB'
-
-
-
-    cnx = mysql.connector.connect(user='root', password='Yale-Exp!-Dboe-2019'
-            , host='127.0.0.1',port= '3307',
-                                  database='TEI_XML_db',
->>>>>>> cdb6a8b87700def94138798c67a8bfc5c14dece3
                                   # use_pure=True # this is used to include  prepared= True statement to enhance prepared statement usage
                                   )
     cursor = cnx.cursor()

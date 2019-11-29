@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe1e781b-d231-4752-a512-0fb02f6e90fe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ini" afterPath="$PROJECT_DIR$/config.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TEIXMLDB/handleDB.py" afterPath="$PROJECT_DIR$/TEIXMLDB/handleDB.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XMLParser_Xpath.py" afterPath="$PROJECT_DIR$/XMLParser_Xpath.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="XMLParser_Xpath.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/XMLParser_Xpath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="191" column="30" lean-forward="true" selection-start-line="191" selection-start-column="30" selection-end-line="191" selection-end-column="30" />
+            <state relative-caret-position="2880">
+              <caret line="192" column="0" lean-forward="true" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -28,9 +29,11 @@
       <file leaf-file-name="handleDB.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TEIXMLDB/handleDB.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
-              <folding />
+            <state relative-caret-position="53">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#1#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -45,17 +48,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
+      <file leaf-file-name="config.ini" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schema.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Schema.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SupportingFiles/Schema.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2260">
@@ -130,10 +133,10 @@
         <option value="$PROJECT_DIR$/d157_qdb-TEI-02.xml" />
         <option value="$PROJECT_DIR$/SampleXmL.xml" />
         <option value="$PROJECT_DIR$/TEI_XML_DB_handler.py" />
-        <option value="$PROJECT_DIR$/TEIXMLDB/handleDB.py" />
-        <option value="$PROJECT_DIR$/XMLParser_Xpath.py" />
         <option value="$PROJECT_DIR$/Database/configLive.ini" />
         <option value="$PROJECT_DIR$/SupportingFiles/Schema.sql" />
+        <option value="$PROJECT_DIR$/TEIXMLDB/handleDB.py" />
+        <option value="$PROJECT_DIR$/XMLParser_Xpath.py" />
         <option value="$PROJECT_DIR$/config.ini" />
       </list>
     </option>
@@ -195,7 +198,7 @@
             <path>
               <item name="XMLHandler" type="b2602c69:ProjectViewProjectNode" />
               <item name="XMLHandler" type="462c0819:PsiDirectoryNode" />
-              <item name="SupportingFiles" type="462c0819:PsiDirectoryNode" />
+              <item name="TEIXMLDB" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -652,24 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TEIXMLDB/handleDB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/XMLParser_Xpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="191" column="30" lean-forward="true" selection-start-line="191" selection-start-column="30" selection-end-line="191" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Database/configLive.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -678,18 +663,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="14" lean-forward="true" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SupportingFiles/Schema.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2260">
           <caret line="503" column="0" lean-forward="true" selection-start-line="503" selection-start-column="0" selection-end-line="503" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XMLParser_Xpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2880">
+          <caret line="192" column="0" lean-forward="true" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TEIXMLDB/handleDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
