@@ -3,6 +3,9 @@ from TEIXMLDB.handleDB import *
 import time
 import os
 from termcolor import colored
+import configparser
+
+
 
 class Usage:
     def getPlaces(self, path, nsmap):
@@ -37,7 +40,6 @@ class XMLParser:
                     print(filepath)
                     teiFiles.append(filepath)
         return teiFiles
-
 
     def parseAndSaveXML(self, file):
         t0 = time.time()
@@ -148,7 +150,7 @@ class XMLParser:
                     defCorresp = defin.xpath('./@corresp', namespaces=nsmap)
                     defin=defin.xpath('./text()', namespaces=nsmap)
                     # print("\tDef", defLang, " ", defin)
-                    teiDb.saveQuoteDefinition(cur_citationId, defLang, defCorresp,defin)
+                    teiDb.saveCitationDefinition(cur_citationId, defLang, defCorresp,defin)
 
 
             for grammarGroup in entry.xpath('./xmlns:gramGrp', namespaces=nsmap):
@@ -166,15 +168,17 @@ class XMLParser:
                 usgId = entryId[0] + 'usg'
                 usgType = usg.xpath('./@type')
                 # print("\tUsg", usgId, " ", usgType)
-                teiDb.saveUsage(EntryId,usgType)
-                u=Usage()
-                for usgPlace in usg.xpath('./xmlns:listPlace', namespaces=nsmap):
-                    u.getPlaces(usgPlace,nsmap)
-                    # usgPlaceNameType = usgPlace.xpath('./@type', namespaces=nsmap)
-                    # usgListPlaceRef = usgPlace.xpath('./@ref', namespaces=nsmap)
-                    # usgPlaceName = usgPlace.xpath('./text()', namespaces=nsmap)
-                    # print("\t\tUsgPlace", usgPlaceNameType, " ", usgListPlaceRef, " ", usgPlaceName)
-                    #
+                teiDb.saveEntryUsage(EntryId,usgType)
+                # This part requires further analysis to extract the names.
+                # u=Usage()
+                # for usgPlace in usg.xpath('./xmlns:listPlace', namespaces=nsmap):
+                #     u.getPlaces(usgPlace,nsmap)
+                #
+                #     usgPlaceNameType = usgPlace.xpath('./@type', namespaces=nsmap)
+                #     usgListPlaceRef = usgPlace.xpath('./@ref', namespaces=nsmap)
+                #     usgPlaceName = usgPlace.xpath('./text()', namespaces=nsmap)
+                #     print("\t\tUsgPlace", usgPlaceNameType, " ", usgListPlaceRef, " ", usgPlaceName)
+
                     # for placeList in usgPlace.xpath('./xmlns:place', namespaces=nsmap):
                     #     usgPlaceNameType = placeList.xpath('./@type', namespaces=nsmap)
                     #     usgListPlaceName = placeList.xpath('./xmlns:placeName/text()', namespaces=nsmap)
@@ -188,12 +192,16 @@ class XMLParser:
         print(t1, t0, (t1-t0))
 
 t0 = time.time()
-dir='/Users/yalemisew/ExploreAt/TEI-XML-2018'
+config = configparser.ConfigParser()
+config.read('config.ini')
+dir = config.get('app', 'input_folder')
+
 directory= os.fsencode(dir)
 xmlParse= XMLParser()
+print(dir)
 teiFiles=xmlParse.readDirectory(dir)
+print("here")
 for filename in teiFiles:
-
     print(colored(("Saving File ", filename), 'blue'))
     xmlParse.parseAndSaveXML(filename)
 # parseAndSaveXML('SampleXml.xml')

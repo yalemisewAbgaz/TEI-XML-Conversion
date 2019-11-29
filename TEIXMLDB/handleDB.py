@@ -1,25 +1,24 @@
-from nltk.wsd import lesk
-from nltk.corpus import wordnet as wn
 import mysql.connector
 import mysql.connector.errorcode
-from mysql.connector import Error
 from termcolor import colored
+import configparser
 
 
 
 class database:
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    dbName= config.get('mysql', 'mysql_db_name')
+    dbHost= config.get('mysql', 'mysql_db_host')
+    dbUser = config.get('mysql', 'mysql_db_user')
+    dbPassword = config.get('mysql', 'mysql_db_password')
+    dbAuthPlugin = config.get('mysql', 'mysql_auth_plugin')
 
-    user = 'root'
-    password = 'ExploreAt!dbo2018'
-    host = '127.0.0.1'
-    db = 'TEI_XML_DB'
 
-
-
-    cnx = mysql.connector.connect(user='root', password='ExploreAt!dbo2018'
-                                  , host='127.0.0.1',
-                                  database='TEI_XML_DB',
-                                  auth_plugin='mysql_native_password',
+    cnx = mysql.connector.connect(user=dbUser, password=dbPassword
+                                  , host= dbHost,
+                                  database=dbName,
+                                  auth_plugin=dbAuthPlugin,
                                   # use_pure=True # this is used to include  prepared= True statement to enhance prepared statement usage
                                   )
     cursor = cnx.cursor()
@@ -106,7 +105,7 @@ class database:
             # print("Saving FormGramGroup", formId, gram)
             value =(tempGram,formId)
             query = (
-                'insert ignore  FormGrammargroup (gram, Form_formid) values (%s, %s);')
+                'insert ignore FormGrammarGroup (gram, Form_formId) values (%s, %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
@@ -153,7 +152,7 @@ class database:
             query = (
                 'insert ignore  orth (type,orth,Form_formid) values (%s,  %s,  %s);')
 
-            # print(query,value)
+            # print("orth",query,value)
 
             self.cursor.execute(query, value)
             self.cnx.commit()
@@ -200,7 +199,7 @@ class database:
             # print("Saving Definition", senseId, corresp)
             value = (tempLang,tempCorresp,tempDefinition,str(senseId))
             query = (
-               'insert ignore  SenseDefinition (lang, corresp, definition, sense_senseid) values (%s, %s, %s, %s);')   
+               'insert ignore  SenseDefinition (senseDeflang, senseDefcorresp, senseDefinition, sense_senseid) values (%s, %s, %s, %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
@@ -209,7 +208,7 @@ class database:
            print(colored(err,'red'))
 
         return cur_id
-    def saveQuoteDefinition(self, quoteId, lang, corresp, definition):
+    def saveCitationDefinition(self, citeId, lang, corresp, definition):
         tempLang = ""
         tempCorresp = ""
         tempDefinition=""
@@ -224,9 +223,9 @@ class database:
         cur_id = None
         try:
             # print("Saving Definition", quoteId, corresp)
-            value =(tempLang, tempCorresp, tempDefinition, str(quoteId))
+            value =(tempLang, tempCorresp, tempDefinition, str(citeId))
             query = (
-               'insert ignore  QuoteDefinition (lang, corresp,definition, quote_quoteid) values (%s, %s, %s, %s);')
+               'insert ignore  CitationDefinition (citationDefLang, citationDefCorresp, citationDefinition, Citation_citationId) values (%s, %s, %s, %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
@@ -342,7 +341,7 @@ class database:
         except mysql.connector.Error as err:
            print(colored(err,'red'))
         return cur_id
-    def saveUsage(self, entryId, type):
+    def saveEntryUsage(self, entryId, type):
         tempType = ""
         print(entryId)
         if len(type) > 0:
@@ -352,7 +351,7 @@ class database:
             # print("Saving usg",entryId, type)
             value = (tempType,str(entryId))
             query = (
-                'insert ignore  Entry_usage (type,Entry_entryId) values (%s, %s);')
+                'insert ignore  EntryUsage (usagetype,Entry_entryId) values (%s, %s);')
             # print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
