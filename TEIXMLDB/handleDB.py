@@ -62,6 +62,7 @@ class database:
             cur_id = self.cursor.lastrowid
             print("currentFormId: ", cur_id)
         except mysql.connector.Error as err:
+            print(self.cursor.statement)
             print(colored(err, 'red'))
 
         return cur_id
