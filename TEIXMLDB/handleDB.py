@@ -42,7 +42,7 @@ class database:
     
     def saveForm(self, entryId, type, n):
         tempType = ""
-        tempN = ""
+        tempN = -1
         print("Saving init ", entryId, type, n)
         if len(type) > 0:
             tempType = type[0]
