@@ -51,7 +51,7 @@ class database:
         cur_id = None
         try:
             print("Saving Form det", entryId, type, n)
-            value = (tempType, tempN, str(entryId))
+            value = (tempType, tempN, entryId)
             print (value)
             query = (
                 "insert into Form (type,n,entry_entryid) values (%s, %s, %s);")
