@@ -51,7 +51,7 @@ class database:
         cur_id = None
         try:
             print("Saving Form det", entryId, type, n)
-            value = (tempType, tempN, entryId)
+            value = (tempType, tempN, str(entryId))
             print (value)
             query = (
                 "insert into Form (type,n,entry_entryid) values (%s, %s, %s);")
@@ -62,7 +62,6 @@ class database:
             cur_id = self.cursor.lastrowid
             print("currentFormId: ", cur_id)
         except mysql.connector.Error as err:
-            print(self.cursor.statement)
             print(colored(err, 'red'))
 
         return cur_id
