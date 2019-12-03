@@ -118,19 +118,20 @@ class database:
     def saveForm(self, entryId, type, n):
         tempType = ""
         tempN = ""
-        # print(entryId)
+        print("Saving init ", entryId, type, n)
         if len(type) > 0:
             tempType = type[0]
         if len(n) > 0:
             tempN = n[0]
         cur_id = None
         try:
-            # print("Saving Form", entryId, type, n)
+            print("Saving Form det", entryId, type, n)
             value = (tempType, tempN, str(entryId))
             query = (
                 "insert ignore  Form (type,n,entry_entryid) values (%s, %s, %s);")
-            # print(query)
+            print(query)
             self.cursor.execute(query, value)
+            print(query)
             self.cnx.commit()
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
