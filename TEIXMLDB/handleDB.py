@@ -39,6 +39,29 @@ class database:
             print(colored(err, 'red'))
 
         return 0
+   def saveForm(self, entryId, type, n):
+        tempType = ""
+        tempN = ""
+        print("Saving init ", entryId, type, n)
+        if len(type) > 0:
+            tempType = type[0]
+        if len(n) > 0:
+            tempN = n[0]
+        cur_id = None
+        try:
+            print("Saving Form det", entryId, type, n)
+            value = (tempType, tempN, str(entryId))
+            query = (
+                "insert into Form (type,n,entry_entryid) values (%s, %s, %s);")
+            print(query)
+            self.cursor.execute(query, value)
+            print(query, value)
+            self.cnx.commit()
+            cur_id = self.cursor.lastrowid
+        except mysql.connector.Error as err:
+            print(colored(err, 'red'))
+
+        return cur_id
 
     def getEntryId(self, id):
         EntryId = ""
@@ -115,29 +138,7 @@ class database:
 
         return 0
 
-    def saveForm(self, entryId, type, n):
-        tempType = ""
-        tempN = ""
-        print("Saving init ", entryId, type, n)
-        if len(type) > 0:
-            tempType = type[0]
-        if len(n) > 0:
-            tempN = n[0]
-        cur_id = None
-        try:
-            print("Saving Form det", entryId, type, n)
-            value = (tempType, tempN, str(entryId))
-            query = (
-                "insert into Form (type,n,entry_entryid) values (%s, %s, %s);")
-            print(query)
-            self.cursor.execute(query, value)
-            print(query, value)
-            self.cnx.commit()
-            cur_id = self.cursor.lastrowid
-        except mysql.connector.Error as err:
-            print(colored(err, 'red'))
 
-        return cur_id
 
     def saveOrth(self, formId, type, orth):
         tempType = ""
