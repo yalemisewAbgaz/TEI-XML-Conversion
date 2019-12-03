@@ -131,7 +131,7 @@ class database:
                 "insert ignore  Form (type,n,entry_entryid) values (%s, %s, %s);")
             print(query)
             self.cursor.execute(query, value)
-            print(query)
+            print(query, value)
             self.cnx.commit()
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
