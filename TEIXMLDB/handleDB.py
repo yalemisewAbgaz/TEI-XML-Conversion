@@ -39,6 +39,7 @@ class database:
             print(colored(err, 'red'))
 
         return 0
+    
    def saveForm(self, entryId, type, n):
         tempType = ""
         tempN = ""
@@ -51,13 +52,15 @@ class database:
         try:
             print("Saving Form det", entryId, type, n)
             value = (tempType, tempN, str(entryId))
+            print (value)
             query = (
                 "insert into Form (type,n,entry_entryid) values (%s, %s, %s);")
-            print(query)
+        
             self.cursor.execute(query, value)
             print(query, value)
             self.cnx.commit()
             cur_id = self.cursor.lastrowid
+            print("currentFormId: ", cur_id)
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
