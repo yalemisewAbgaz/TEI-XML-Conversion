@@ -128,7 +128,7 @@ class database:
             print("Saving Form det", entryId, type, n)
             value = (tempType, tempN, str(entryId))
             query = (
-                "insert ignore  Form (type,n,entry_entryid) values (%s, %s, %s);")
+                "insert into Form (type,n,entry_entryid) values (%s, %s, %s);")
             print(query)
             self.cursor.execute(query, value)
             print(query, value)
