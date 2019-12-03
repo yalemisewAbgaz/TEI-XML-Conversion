@@ -57,7 +57,7 @@ class database:
                 "insert into Form (type,n,entry_entryid) values (%s, %s, %s);")
         
             self.cursor.execute(query, value)
-            print(query, value)
+            print(self.cursor.statement)
             self.cnx.commit()
             cur_id = self.cursor.lastrowid
             print("currentFormId: ", cur_id)
