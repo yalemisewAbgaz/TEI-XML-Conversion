@@ -40,7 +40,7 @@ class database:
 
         return 0
     
-   def saveForm(self, entryId, type, n):
+    def saveForm(self, entryId, type, n):
         tempType = ""
         tempN = ""
         print("Saving init ", entryId, type, n)
