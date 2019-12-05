@@ -26,156 +26,145 @@ class database:
 
     # cursor = cnx.cursor(prepared=True)
 
-    def saveEntry(self, entryId, entryLang):
+    def saveEntry(self, entry_id, entryLang):
         try:
-            # print("Saving Entry", entryId, entryLang)
-            value = (entryId[0], entryLang[0])
+            print("Saving Entry========\n\n\n\n", entry_id, entryLang)
+            value = (entry_id[0], entryLang[0])
             query = (
-                'insert ignore  Entry (Id, Lang) values (%s, %s);')
-            # print(query)
+                'insert into  entry (Id, Lang) values (%s, %s);')
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return 0
 
-    def getEntryId(self, id):
-        EntryId = ""
-        try:
-            # print("Searching Entry", id)
-            value = (id)
-            query = (
-                "select EntryId from Entry where id =%s;")
-            # print(query)
-            self.cursor.execute(query, value)
-            for rec in self.cursor:
-                EntryId = rec[0]
+    def savePlace(self,  data):
 
-        except mysql.connector.Error as err:
-            print(colored(err, 'red'))
+        if len(data) > 0:
+            try:
+                print("Saving places", data)
+                # value = (tempPos, str(entry_id))
+                query = (
+                    'insert into  place ( list_place_ref, place_type, place_name, place_id_no, usage_id) values (%s, %s, %s, %s,  %s);')
 
-        return EntryId
+                self.cursor.executemany(query,data)
+                self.cnx.commit()
+                print(self.cursor.statement)
+            except mysql.connector.Error as err:
+                print(colored(err, 'red'))
 
-    def getFormId(self, id):
-        EntryId = ""
-        try:
-            # print("Searching Entry", id)
-            value = (id)
-            query = (
-                "select EntryId from Entry where id=%s;")
-            # print(query)
-            self.cursor.execute(query, value)
-            for rec in self.cursor:
-                EntryId = rec[0]
+            return 0
 
-        except mysql.connector.Error as err:
-            print(colored(err, 'red'))
 
-        return EntryId
-
-    def saveGrammarGroup(self, entryId, pos):
+    def saveGrammarGroup(self, entry_id, pos):
         tempGram = ""
         tempPos = ""
-        print(entryId)
+        print(entry_id)
 
         if len(pos) > 0:
             tempPos = pos[0]
 
         try:
-            # print("Saving GramGroup", entryId, pos)
-            value = (tempPos, str(entryId))
+            print("Saving GramGroup", entry_id, pos)
+            value = (tempPos, str(entry_id))
             query = (
-                'insert ignore  GrammarGroup ( pos, entry_entryid) values (%s,  %s);')
-            # print(query)
+                'insert into  grammar_group ( pos, entry_id) values (%s,  %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return 0
 
-    def saveFormGrammarGroup(self, formId, gram):
+    def saveFormGrammarGroup(self, form_id, gram):
         tempGram = ""
         tempPos = ""
-        # print(formId)
+        print(form_id)
         if len(gram) > 0:
             tempGram = gram[0]
 
         try:
-            # print("Saving FormGramGroup", formId, gram)
-            value = (tempGram, formId)
+            print("Saving FormGramGroup", form_id, gram)
+            value = (tempGram, form_id)
             query = (
-                'insert ignore FormGrammarGroup (gram, Form_formId) values (%s, %s);')
-            # print(query)
+                'insert into form_grammar_group (gram, form_id) values (%s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return 0
 
-    def saveForm(self, entryId, type, n):
+    def saveForm(self, entry_id, type, n):
         tempType = ""
-        tempN = ""
-        # print(entryId)
+        tempN = -1
+        print(entry_id)
         if len(type) > 0:
             tempType = type[0]
         if len(n) > 0:
             tempN = n[0]
         cur_id = None
         try:
-            # print("Saving Form", entryId, type, n)
-            value = (tempType, tempN, str(entryId))
+            print("Saving Form", entry_id, type, n)
+            value = (tempType, int(tempN), entry_id)
             query = (
-                "insert ignore  Form (type,n,entry_entryid) values (%s, %s, %s);")
-            # print(query)
+                "insert into  form (type,n,entry_id) values (%s, %s, %s);")
+            print(query, value)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
-
+        print("=====current form id ", cur_id)
         return cur_id
 
-    def saveOrth(self, formId, type, orth):
+    def saveOrth(self, form_id, type, orth):
         tempType = ""
         tempOrth = ""
-        # print(formId)
+        print(form_id)
         if len(type) > 0:
             tempType = type[0]
         if len(orth) > 0:
             tempOrth = orth[0]
         cur_id = None
         try:
-            # print("Saving Orth", formId, type, orth)
-            value = (tempType, tempOrth, str(formId))
+            print("Saving Orth", form_id, type, orth)
+            value = (tempType, tempOrth, str(form_id))
             query = (
-                'insert ignore  Orth (type,orth,Form_formid) values (%s,  %s,  %s);')
+                'insert into  orth (type, orth, form_id) values (%s,  %s,  %s);')
 
-            # print("orth",query,value)
+            print("orth",query,value)
 
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return cur_id
 
-    def saveSense(self, entryId, corresp):
+    def saveSense(self, entry_id, corresp):
         tempCorresp = ""
-        # print(entryId)
+        print(entry_id)
         if len(corresp) > 0:
             tempCorresp = corresp[0]
 
         cur_id = None
         try:
-            # print("Saving Sense", entryId, corresp)
-            value = (tempCorresp, entryId)
+            print("Saving Sense", entry_id, corresp)
+            value = (tempCorresp, entry_id)
             query = (
-                'insert ignore  Sense (corresp, entry_entryid) values (%s, %s);')
-            # print(query)
+                'insert into  sense (corresp, entry_id) values (%s, %s);')
+            print(query)
+            print(self.cursor.statement)
             self.cursor.execute(query, value)
             self.cnx.commit()
             cur_id = self.cursor.lastrowid
@@ -184,11 +173,11 @@ class database:
 
         return cur_id
 
-    def saveSenseDefinition(self, senseId, lang, corresp, definition):
+    def saveSenseDefinition(self, sense_id, lang, corresp, definition):
         tempLang = ""
         tempCorresp = ""
         tempDefinition = ""
-        # print(senseId)
+        print(sense_id)
         if len(corresp) > 0:
             tempCorresp = corresp[0]
         if len(lang) > 0:
@@ -198,13 +187,14 @@ class database:
 
         cur_id = None
         try:
-            # print("Saving Definition", senseId, corresp)
-            value = (tempLang, tempCorresp, tempDefinition, str(senseId))
+            print("Saving Definition", sense_id, corresp)
+            value = (tempLang, tempCorresp, tempDefinition, str(sense_id))
             query = (
-                'insert ignore  SenseDefinition (senseDeflang, senseDefcorresp, senseDefinition, sense_senseid) values (%s, %s, %s, %s);')
-            # print(query)
+                'insert into  sense_definition (sense_Def_lang, sense_Def_corresp, sense_Definition, sense_id) values (%s, %s, %s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
@@ -215,7 +205,6 @@ class database:
         tempLang = ""
         tempCorresp = ""
         tempDefinition = ""
-        # print(quoteId)
         if len(corresp) > 0:
             tempCorresp = corresp[0]
         if len(lang) > 0:
@@ -225,25 +214,27 @@ class database:
 
         cur_id = None
         try:
-            # print("Saving Definition", quoteId, corresp)
+            print("Saving Definition", citeId, corresp)
             value = (tempLang, tempCorresp, tempDefinition, str(citeId))
             query = (
-                'insert ignore  CitationDefinition (citationDefLang, citationDefCorresp, citationDefinition, Citation_citationId) values (%s, %s, %s, %s);')
-            # print(query)
+                'insert into  citation_definition (citation_Def_Lang, citation_Def_Corresp, citation_Definition,'
+                ' citation_id) values (%s, %s, %s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return cur_id
 
-    def savePronunciation(self, formId, notation, resp, change, pron):
+    def savePronunciation(self, form_id, notation, resp, change, pron):
         tempNotation = ""
         tempResp = ""
         tempChange = ""
         tempPron = ""
-        # print(formId)
+        print(form_id)
         if len(notation) > 0:
             tempNotation = notation[0]
         if len(resp) > 0:
@@ -254,25 +245,26 @@ class database:
             tempPron = pron[0]
         cur_id = None
         try:
-            # print("Saving Pronunciation", formId, notation)
-            value = (tempNotation, tempResp, tempChange, tempPron, formId)
+            print("Saving Pronunciation", form_id, notation)
+            value = (tempNotation, tempResp, tempChange, tempPron, form_id)
             query = (
-                'insert ignore  Pronunciation (notation, resp, changes, pron,Form_formId) values (%s, %s, %s, %s, %s);')
-            # print(query)
+                'insert into  pronunciation (notation, resp, changes, pron,form_id) values (%s, %s, %s, %s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return cur_id
 
-    def saveNote(self, entryId, noteType, noteResp, noteCorresp, noteText):
+    def saveNote(self, entry_id, noteType, noteResp, noteCorresp, noteText):
         tempNoteType = ""
         tempNoteResp = ""
         tempNoteCorresp = ""
         tempNoteText = ""
-        # print(entryId)
+        print(entry_id)
         if len(noteType) > 0:
             tempNoteType = noteType[0]
         if len(noteResp) > 0:
@@ -283,25 +275,26 @@ class database:
             tempNoteText = noteText[0]
         cur_id = None
         try:
-            # print("Saving Note", entryId,noteType, noteResp,noteCorresp,noteText)
-            value = (tempNoteType, tempNoteResp, tempNoteCorresp, tempNoteText, str(entryId))
+            print("Saving Note", entry_id,noteType, noteResp,noteCorresp,noteText)
+            value = (tempNoteType, tempNoteResp, tempNoteCorresp, tempNoteText, str(entry_id))
             query = (
-                'insert ignore  Note (type, resp, corresp,note,entry_entryid) values (%s, %s, %s, %s, %s);')
+                'insert into  note (type, resp, corresp,note,entry_id) values (%s, %s, %s, %s, %s);')
 
-            # print(query)
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return cur_id
 
-    def saveCitation(self, entryId, citType, citNo):
+    def saveCitation(self, entry_id, citType, citNo):
         tempCitType = ""
         tempCitNo = ""
 
-        # print(entryId)
+        print(entry_id)
         if len(citType) > 0:
             tempCitType = citType[0]
         if len(citNo) > 0:
@@ -309,25 +302,26 @@ class database:
 
         cur_id = None
         try:
-            # print("Saving Citation", entryId, citType, citNo)
-            value = (tempCitType, tempCitNo, str(entryId))
+            print("Saving Citation", entry_id, citType, citNo)
+            value = (tempCitType, tempCitNo, str(entry_id))
             query = (
-                'insert ignore  Citation (type, n,entry_entryid) values (%s, %s, %s);')
-            # print(query)
+                'insert into  citation (type, n, entry_id) values (%s, %s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
 
         return cur_id
 
-    def saveQuotation(self, entryId, citationId, resp, change, quote):
+    def saveQuotation(self, entry_id, citation_id, resp, change, quote):
         tempQuote = ""
         tempResp = ""
         tempChange = ""
 
-        # print(citationId)
+        print(citation_id)
         if len(quote) > 0:
             tempQuote = quote[0]
         if len(resp) > 0:
@@ -337,42 +331,55 @@ class database:
 
         cur_id = None
         try:
-            # print("Saving citation Quotation", citationId, resp)
-            value = (tempResp, tempChange, tempQuote, str(citationId), str(entryId))
+            print("Saving citation Quotation", citation_id, resp)
+            value = (tempResp, tempChange, tempQuote, str(citation_id))
             query = (
-                'insert ignore  Quote (resp, changes, quote, citation_citationId, Citation_Entry_entryId) values (%s,  %s,  %s,  %s,  %s);')
-            # print(query)
+                'insert into  citation_quote (resp, changes, quote, citation_id) values (%s,  %s,  %s,  %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
         return cur_id
 
-    def saveEntryUsage(self, entryId, type):
+    def saveEntryUsage(self, entry_id, type,corresp, usgPlaceName, usgPlaceType):
         tempType = ""
-        print(entryId)
+        tempCorresp=""
+        tempUsgPlaceName=""
+        tempUsgPlaceType= ""
+        print(entry_id)
         if len(type) > 0:
             tempType = type[0]
+        if len(corresp) > 0:
+            tempCorresp = corresp[0]
+        if len(usgPlaceName) > 0:
+            tempUsgPlaceName = usgPlaceName[0]
+        if len(usgPlaceType) > 0:
+            tempUsgPlaceType = usgPlaceType[0]
+
+
         cur_id = None
         try:
-            # print("Saving usg",entryId, type)
-            value = (tempType, str(entryId))
+            print("Saving usg",entry_id, type)
+            value = (tempType, tempCorresp, tempUsgPlaceName, tempUsgPlaceType, str(entry_id))
             query = (
-                'insert ignore  EntryUsage (usagetype,Entry_entryId) values (%s, %s);')
-            # print(query)
+                'insert into  entry_usage (usage_type, usage_corresp, usage_place_name, usage_place_type, entry_id) values (%s, %s, %s, %s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
         return cur_id
 
-    def saveReference(self, entryId, type, ref, refDate):
+    def saveReference(self, entry_id, type, ref, refDate):
         tempType = ""
         tempRef = ""
         tempRefDate = ""
-        # print(entryId)
+        print(entry_id)
         if len(type) > 0:
             tempType = type[0]
         if len(ref) > 0:
@@ -381,37 +388,73 @@ class database:
             tempRefDate = refDate[0]
         cur_id = None
         try:
-            # print("Saving usg",entryId, type)
-            value = (tempType, tempRef, tempRefDate, str(entryId))
+            print("Saving reference",entry_id, type)
+            value = (tempType, tempRef, tempRefDate, str(entry_id))
             query = (
-                'insert ignore  Reference (type,ref, refDate, Entry_entryId) values (%s, %s, %s, %s);')
-            # print(query)
+                'insert into  reference (type, ref, ref_Date, entry_id) values (%s, %s, %s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
         return cur_id
 
-    def saveBibliography(self, entryId, referenceId, refBiblType, refBibl):
+    def saveBibliography(self, entry_id, reference_id, refBiblType, refBibl):
         tempRefBiblType = ""
         tempRefBibl = ""
 
-        # print(entryId)
+        print(entry_id)
         if len(refBiblType) > 0:
             tempRefBiblType = refBiblType[0]
         if len(refBibl) > 0:
             tempRefBibl = refBibl[0]
         cur_id = None
         try:
-            # print("Saving Bibliography", entryId, type)
-            value = (tempRefBiblType, tempRefBibl, str(referenceId), str(entryId))
+            print("Saving Bibliography============", entry_id, type)
+            value = (tempRefBiblType, tempRefBibl, str(reference_id), str(entry_id))
             query = (
-                'insert ignore  Bibliography (type, bibl, reference_referenceId, Reference_Entry_entryId)  values (%s, %s, %s, %s);')
-            # print(query)
+                'insert into  bibliography (type, bibl, ref_date, reference_id)  values (%s, %s, %s, %s);')
+            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
         return cur_id
+
+    def getEntryId(self, id):
+        entry_id = ""
+        try:
+            print("Searching Entry", id)
+            value = (id)
+            query = (
+                "select entry_id from entry where id =%s;")
+            print(query)
+            self.cursor.execute(query, value)
+            for rec in self.cursor:
+                entry_id = rec[0]
+
+        except mysql.connector.Error as err:
+            print(colored(err, 'red'))
+
+        return entry_id
+
+    def getform_id(self, id):
+        entry_id = ""
+        try:
+            print("Searching Entry", id)
+            value = (id)
+            query = (
+                "select entry_id from entry where id=%s;")
+            print(query)
+            self.cursor.execute(query, value)
+            for rec in self.cursor:
+                entry_id = rec[0]
+
+        except mysql.connector.Error as err:
+            print(colored(err, 'red'))
+
+        return entry_id

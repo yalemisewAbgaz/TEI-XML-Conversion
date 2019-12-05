@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.15, for macos10.14 (x86_64)
 --
--- Host: 127.0.0.1    Database: TEI_XML_db
+-- Host: 127.0.0.1    Database: tei_xml_db
 -- ------------------------------------------------------
 -- Server version	8.0.15
 
@@ -19,10 +19,10 @@
 -- Table structure for table `Bibliography`
 --
 
-DROP TABLE IF EXISTS `Bibliography`;
+DROP TABLE IF EXISTS `bibliography`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Bibliography` (
+CREATE TABLE `bibliography` (
   `bibliographyId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `bibl` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -35,22 +35,22 @@ CREATE TABLE `Bibliography` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Bibliography`
+-- Dumping data for table `bibliography`
 --
 
-LOCK TABLES `Bibliography` WRITE;
-/*!40000 ALTER TABLE `Bibliography` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Bibliography` ENABLE KEYS */;
+LOCK TABLES `bibliography` WRITE;
+/*!40000 ALTER TABLE `bibliography` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bibliography` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `Citation`
 --
 
-DROP TABLE IF EXISTS `Citation`;
+DROP TABLE IF EXISTS `citation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Citation` (
+CREATE TABLE `citation` (
   `citationId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `n` int(11) DEFAULT NULL,
@@ -65,19 +65,19 @@ CREATE TABLE `Citation` (
 -- Dumping data for table `Citation`
 --
 
-LOCK TABLES `Citation` WRITE;
-/*!40000 ALTER TABLE `Citation` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Citation` ENABLE KEYS */;
+LOCK TABLES `citation` WRITE;
+/*!40000 ALTER TABLE `citation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `citation` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `CitationDefinition`
+-- Table structure for table `citation_definition`
 --
 
-DROP TABLE IF EXISTS `CitationDefinition`;
+DROP TABLE IF EXISTS `citation_definition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `CitationDefinition` (
+CREATE TABLE `citation_definition` (
   `citationDefinitionId` int(11) NOT NULL AUTO_INCREMENT,
   `citationDefLang` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `citationDefCorresp` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -90,22 +90,22 @@ CREATE TABLE `CitationDefinition` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `CitationDefinition`
+-- Dumping data for table `citation_definition`
 --
 
-LOCK TABLES `CitationDefinition` WRITE;
-/*!40000 ALTER TABLE `CitationDefinition` DISABLE KEYS */;
-/*!40000 ALTER TABLE `CitationDefinition` ENABLE KEYS */;
+LOCK TABLES `citation_definition` WRITE;
+/*!40000 ALTER TABLE `citation_definition` DISABLE KEYS */;
+/*!40000 ALTER TABLE `citation_definition` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Definition`
+-- Table structure for table `definition`
 --
 
-DROP TABLE IF EXISTS `Definition`;
+DROP TABLE IF EXISTS `definition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Definition` (
+CREATE TABLE `definition` (
   `definitionId` int(11) NOT NULL AUTO_INCREMENT,
   `lang` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `corresp` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -118,22 +118,22 @@ CREATE TABLE `Definition` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Definition`
+-- Dumping data for table `definition`
 --
 
-LOCK TABLES `Definition` WRITE;
-/*!40000 ALTER TABLE `Definition` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Definition` ENABLE KEYS */;
+LOCK TABLES `definition` WRITE;
+/*!40000 ALTER TABLE `definition` DISABLE KEYS */;
+/*!40000 ALTER TABLE `definition` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Entry`
+-- Table structure for table `entry`
 --
 
-DROP TABLE IF EXISTS `Entry`;
+DROP TABLE IF EXISTS `entry`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Entry` (
+CREATE TABLE `entry` (
   `entryId` int(11) NOT NULL AUTO_INCREMENT,
   `id` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   `lang` char(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -142,22 +142,22 @@ CREATE TABLE `Entry` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Entry`
+-- Dumping data for table `entry`
 --
 
-LOCK TABLES `Entry` WRITE;
-/*!40000 ALTER TABLE `Entry` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Entry` ENABLE KEYS */;
+LOCK TABLES `entry` WRITE;
+/*!40000 ALTER TABLE `entry` DISABLE KEYS */;
+/*!40000 ALTER TABLE `entry` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `EntryUsage`
+-- Table structure for table `entry_usage`
 --
 
-DROP TABLE IF EXISTS `EntryUsage`;
+DROP TABLE IF EXISTS `entry_usage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `EntryUsage` (
+CREATE TABLE `entry_usage` (
   `usageId` int(11) NOT NULL AUTO_INCREMENT,
   `usageType` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `Entry_entryId` int(11) DEFAULT NULL,
@@ -171,19 +171,19 @@ CREATE TABLE `EntryUsage` (
 -- Dumping data for table `EntryUsage`
 --
 
-LOCK TABLES `EntryUsage` WRITE;
-/*!40000 ALTER TABLE `EntryUsage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `EntryUsage` ENABLE KEYS */;
+LOCK TABLES `entry_usage` WRITE;
+/*!40000 ALTER TABLE `entry_usage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `entry_usage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Form`
+-- Table structure for table `form`
 --
 
-DROP TABLE IF EXISTS `Form`;
+DROP TABLE IF EXISTS `form`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Form` (
+CREATE TABLE `form` (
   `formId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `n` int(11) DEFAULT NULL,
@@ -195,22 +195,22 @@ CREATE TABLE `Form` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Form`
+-- Dumping data for table `form`
 --
 
-LOCK TABLES `Form` WRITE;
-/*!40000 ALTER TABLE `Form` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Form` ENABLE KEYS */;
+LOCK TABLES `form` WRITE;
+/*!40000 ALTER TABLE `form` DISABLE KEYS */;
+/*!40000 ALTER TABLE `form` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `FormGrammarGroup`
 --
 
-DROP TABLE IF EXISTS `FormGrammarGroup`;
+DROP TABLE IF EXISTS `form_grammar_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `FormGrammarGroup` (
+CREATE TABLE `form_grammar_group` (
   `formGramGroupId` int(11) NOT NULL AUTO_INCREMENT,
   `gram` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `Form_formId` int(11) DEFAULT NULL,
@@ -224,19 +224,19 @@ CREATE TABLE `FormGrammarGroup` (
 -- Dumping data for table `FormGrammarGroup`
 --
 
-LOCK TABLES `FormGrammarGroup` WRITE;
-/*!40000 ALTER TABLE `FormGrammarGroup` DISABLE KEYS */;
-/*!40000 ALTER TABLE `FormGrammarGroup` ENABLE KEYS */;
+LOCK TABLES `form_grammar_group` WRITE;
+/*!40000 ALTER TABLE `form_grammar_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `form_grammar_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `GrammarGroup`
+-- Table structure for table `grammar_group`
 --
 
-DROP TABLE IF EXISTS `GrammarGroup`;
+DROP TABLE IF EXISTS `grammar_group`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `GrammarGroup` (
+CREATE TABLE `grammar_group` (
   `grammarGroupId` int(11) NOT NULL AUTO_INCREMENT,
   `gram` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `pos` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -248,22 +248,22 @@ CREATE TABLE `GrammarGroup` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `GrammarGroup`
+-- Dumping data for table `grammar_group`
 --
 
-LOCK TABLES `GrammarGroup` WRITE;
-/*!40000 ALTER TABLE `GrammarGroup` DISABLE KEYS */;
-/*!40000 ALTER TABLE `GrammarGroup` ENABLE KEYS */;
+LOCK TABLES `grammar_group` WRITE;
+/*!40000 ALTER TABLE `grammar_group` DISABLE KEYS */;
+/*!40000 ALTER TABLE `grammar_group` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Note`
+-- Table structure for table `note`
 --
 
-DROP TABLE IF EXISTS `Note`;
+DROP TABLE IF EXISTS `note`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Note` (
+CREATE TABLE `note` (
   `noteId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `resp` varchar(200) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -280,22 +280,22 @@ CREATE TABLE `Note` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Note`
+-- Dumping data for table `note`
 --
 
-LOCK TABLES `Note` WRITE;
-/*!40000 ALTER TABLE `Note` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Note` ENABLE KEYS */;
+LOCK TABLES `note` WRITE;
+/*!40000 ALTER TABLE `note` DISABLE KEYS */;
+/*!40000 ALTER TABLE `note` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Orth`
+-- Table structure for table `orth`
 --
 
-DROP TABLE IF EXISTS `Orth`;
+DROP TABLE IF EXISTS `orth`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Orth` (
+CREATE TABLE `orth` (
   `orthId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `orth` varchar(300) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -307,22 +307,22 @@ CREATE TABLE `Orth` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Orth`
+-- Dumping data for table `orth`
 --
 
-LOCK TABLES `Orth` WRITE;
-/*!40000 ALTER TABLE `Orth` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Orth` ENABLE KEYS */;
+LOCK TABLES `orth` WRITE;
+/*!40000 ALTER TABLE `orth` DISABLE KEYS */;
+/*!40000 ALTER TABLE `orth` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Place`
+-- Table structure for table `place`
 --
 
-DROP TABLE IF EXISTS `Place`;
+DROP TABLE IF EXISTS `place`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Place` (
+CREATE TABLE `place` (
   `placeId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `name` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -335,22 +335,22 @@ CREATE TABLE `Place` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Place`
+-- Dumping data for table `place`
 --
 
-LOCK TABLES `Place` WRITE;
-/*!40000 ALTER TABLE `Place` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Place` ENABLE KEYS */;
+LOCK TABLES `place` WRITE;
+/*!40000 ALTER TABLE `place` DISABLE KEYS */;
+/*!40000 ALTER TABLE `place` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Pronunciation`
+-- Table structure for table `pronunciation`
 --
 
-DROP TABLE IF EXISTS `Pronunciation`;
+DROP TABLE IF EXISTS `pronunciation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Pronunciation` (
+CREATE TABLE `pronunciation` (
   `pronunciationId` int(11) NOT NULL AUTO_INCREMENT,
   `notation` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `resp` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -364,22 +364,22 @@ CREATE TABLE `Pronunciation` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Pronunciation`
+-- Dumping data for table `pronunciation`
 --
 
-LOCK TABLES `Pronunciation` WRITE;
-/*!40000 ALTER TABLE `Pronunciation` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Pronunciation` ENABLE KEYS */;
+LOCK TABLES `pronunciation` WRITE;
+/*!40000 ALTER TABLE `pronunciation` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pronunciation` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Quote`
+-- Table structure for table `quote`
 --
 
-DROP TABLE IF EXISTS `Quote`;
+DROP TABLE IF EXISTS `quote`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Quote` (
+CREATE TABLE `quote` (
   `quoteId` int(11) NOT NULL,
   `resp` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `changes` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -393,22 +393,22 @@ CREATE TABLE `Quote` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Quote`
+-- Dumping data for table `quote`
 --
 
-LOCK TABLES `Quote` WRITE;
-/*!40000 ALTER TABLE `Quote` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Quote` ENABLE KEYS */;
+LOCK TABLES `quote` WRITE;
+/*!40000 ALTER TABLE `quote` DISABLE KEYS */;
+/*!40000 ALTER TABLE `quote` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `Reference`
+-- Table structure for table `reference`
 --
 
-DROP TABLE IF EXISTS `Reference`;
+DROP TABLE IF EXISTS `reference`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Reference` (
+CREATE TABLE `reference` (
   `referenceId` int(11) NOT NULL AUTO_INCREMENT,
   `type` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ref` varchar(300) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -421,22 +421,22 @@ CREATE TABLE `Reference` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Reference`
+-- Dumping data for table `reference`
 --
 
-LOCK TABLES `Reference` WRITE;
-/*!40000 ALTER TABLE `Reference` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Reference` ENABLE KEYS */;
+LOCK TABLES `reference` WRITE;
+/*!40000 ALTER TABLE `reference` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reference` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `Sense`
 --
 
-DROP TABLE IF EXISTS `Sense`;
+DROP TABLE IF EXISTS `sense`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `Sense` (
+CREATE TABLE `sense` (
   `senseId` int(11) NOT NULL AUTO_INCREMENT,
   `corresp` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `Entry_entryId` int(11) NOT NULL,
@@ -447,22 +447,22 @@ CREATE TABLE `Sense` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Sense`
+-- Dumping data for table `sense`
 --
 
-LOCK TABLES `Sense` WRITE;
-/*!40000 ALTER TABLE `Sense` DISABLE KEYS */;
-/*!40000 ALTER TABLE `Sense` ENABLE KEYS */;
+LOCK TABLES `sense` WRITE;
+/*!40000 ALTER TABLE `sense` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sense` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `SenseDefinition`
 --
 
-DROP TABLE IF EXISTS `SenseDefinition`;
+DROP TABLE IF EXISTS `sense_definition`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `SenseDefinition` (
+CREATE TABLE `sense_definition` (
   `senseDefinitionId` int(11) NOT NULL AUTO_INCREMENT,
   `senseDefLang` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `senseDefCorresp` varchar(50) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -478,9 +478,9 @@ CREATE TABLE `SenseDefinition` (
 -- Dumping data for table `SenseDefinition`
 --
 
-LOCK TABLES `SenseDefinition` WRITE;
-/*!40000 ALTER TABLE `SenseDefinition` DISABLE KEYS */;
-/*!40000 ALTER TABLE `SenseDefinition` ENABLE KEYS */;
+LOCK TABLES `sense_definition` WRITE;
+/*!40000 ALTER TABLE `sense_definition` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sense_definition` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

@@ -86,7 +86,7 @@ class WordList:
         try:
             # print("adding word",word, source.sourceid)
             query = (
-                "insert ignore  token (token, keyword_id,source,source_id) values ('" + name+"','" + str(tagId) +"','"+source + "','" + sourceid + "')")
+                "insert ignore into  token (token, keyword_id,source,source_id) values ('" + name+"','" + str(tagId) +"','"+source + "','" + sourceid + "')")
             # print(query)
             self.cursor.execute(query)
             self.connection.commit()
@@ -111,7 +111,7 @@ class WordList:
     def addTaxonomy(self, wordId, path):
         try:
             query = (
-                "insert ignore  Taxonomy (token_id, path) values ('"+ wordId +"','"+str(path) +"')")
+                "insert ignore into  Taxonomy (token_id, path) values ('"+ wordId +"','"+str(path) +"')")
             print(query)
             self.cursor.execute(query)
             self.connection.commit()
@@ -130,7 +130,7 @@ class WordList:
         # print("values",values)
         try:
             query = (
-                "insert ignore  Taxonomy (token_id, path,full_path) values"+ values+"")
+                "insert ignore into  Taxonomy (token_id, path,full_path) values"+ values+"")
             print("query" ,query)
             self.cursor.execute(query)
             self.connection.commit()
@@ -140,7 +140,7 @@ class WordList:
     def AddFoundKeywords(self, keyword_id, token_id):
             try:
                 query = (
-                    "insert ignore  keywordsFound (keyword_id,token_id) values ('" + str(keyword_id) + "','" + str(token_id) + "')")
+                    "insert ignore into  keywordsFound (keyword_id,token_id) values ('" + str(keyword_id) + "','" + str(token_id) + "')")
                 # print(query)
                 self.cursor.execute(query)
                 self.connection.commit()
@@ -292,7 +292,7 @@ class WordList:
                 fullPath=rec[2]
                 i=0
                 for word in fullPath.split(":"):
-                    queryUpdate=("insert  ignore into taxonomyExploded values (\'"+str(taxoId)+"\',\'"+str(taxoWordId)+"\',\'"+ word+"\',\'"+ str(i)+"\')")
+                    queryUpdate=("insert  ignore into into taxonomyExploded values (\'"+str(taxoId)+"\',\'"+str(taxoWordId)+"\',\'"+ word+"\',\'"+ str(i)+"\')")
                     i+=1
                     print(queryUpdate)
                     self.cursor.execute(queryUpdate)

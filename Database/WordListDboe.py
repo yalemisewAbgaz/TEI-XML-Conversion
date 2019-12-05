@@ -294,7 +294,7 @@ class WordList:
                 fullPath=rec[2]
                 i=0
                 for word in fullPath.split(":"):
-                    queryUpdate=("insert  ignore into taxonomyExploded values (\'"+str(taxoId)+"\',\'"+str(taxoWordId)+"\',\'"+ word+"\',\'"+ str(i)+"\')")
+                    queryUpdate=("insert  ignore  taxonomyExploded values (\'"+str(taxoId)+"\',\'"+str(taxoWordId)+"\',\'"+ word+"\',\'"+ str(i)+"\')")
                     i+=1
                     print(queryUpdate)
                     self.cursor.execute(queryUpdate)
