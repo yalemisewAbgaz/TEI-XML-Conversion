@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe1e781b-d231-4752-a512-0fb02f6e90fe" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SupportingFiles/deleteReset.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SupportingFiles/tei_xml_db_create_statements.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database/WordList.py" afterPath="$PROJECT_DIR$/Database/WordList.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Database/WordListDboe.py" afterPath="$PROJECT_DIR$/Database/WordListDboe.py" />
@@ -298,7 +299,7 @@
     <frame x="1440" y="-157" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15761448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15761448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49688148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
