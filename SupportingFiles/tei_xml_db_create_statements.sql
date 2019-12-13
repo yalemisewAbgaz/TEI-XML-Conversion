@@ -1,4 +1,7 @@
-Create  database if not exists tei_xml_db;
+Drop database tei_xml_db;
+Create  database if not exists tei_xml_db
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
 
 use tei_xml_db;
 
