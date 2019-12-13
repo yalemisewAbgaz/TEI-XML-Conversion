@@ -92,7 +92,6 @@ class database:
             value = (tempGram, form_id)
             query = (
                 'insert into form_grammar_group (gram, form_id) values (%s, %s);')
-            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -115,7 +114,6 @@ class database:
             value = (tempType, int(tempN), entry_id)
             query = (
                 "insert into  form (type,n,entry_id) values (%s, %s, %s);")
-            print(query, value)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -139,9 +137,6 @@ class database:
             value = (tempType, tempOrth, str(form_id))
             query = (
                 'insert into  orth (type, orth, form_id) values (%s,  %s,  %s);')
-
-            print("orth",query,value)
-
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -161,12 +156,13 @@ class database:
         try:
             print("Saving Sense", entry_id, corresp)
             value = (tempCorresp, entry_id)
+            print(value)
             query = (
                 'insert into  sense (corresp, entry_id) values (%s, %s);')
-            print(query)
-            print(self.cursor.statement)
+
             self.cursor.execute(query, value)
             self.cnx.commit()
+            print(self.cursor.statement)
             cur_id = self.cursor.lastrowid
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
@@ -191,7 +187,6 @@ class database:
             value = (tempLang, tempCorresp, tempDefinition, str(sense_id))
             query = (
                 'insert into  sense_definition (sense_Def_lang, sense_Def_corresp, sense_Definition, sense_id) values (%s, %s, %s, %s);')
-            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -219,7 +214,6 @@ class database:
             query = (
                 'insert into  citation_definition (citation_Def_Lang, citation_Def_Corresp, citation_Definition,'
                 ' citation_id) values (%s, %s, %s, %s);')
-            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -249,7 +243,6 @@ class database:
             value = (tempNotation, tempResp, tempChange, tempPron, form_id)
             query = (
                 'insert into  pronunciation (notation, resp, changes, pron,form_id) values (%s, %s, %s, %s, %s);')
-            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -280,7 +273,6 @@ class database:
             query = (
                 'insert into  note (type, resp, corresp,note,entry_id) values (%s, %s, %s, %s, %s);')
 
-            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -306,7 +298,6 @@ class database:
             value = (tempCitType, tempCitNo, str(entry_id))
             query = (
                 'insert into  citation (type, n, entry_id) values (%s, %s, %s);')
-            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -335,7 +326,6 @@ class database:
             value = (tempResp, tempChange, tempQuote, str(citation_id))
             query = (
                 'insert into  citation_quote (resp, changes, quote, citation_id) values (%s,  %s,  %s,  %s);')
-            print(query)
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -366,7 +356,7 @@ class database:
             value = (tempType, tempCorresp, tempUsgPlaceName, tempUsgPlaceType, str(entry_id))
             query = (
                 'insert into  entry_usage (usage_type, usage_corresp, usage_place_name, usage_place_type, entry_id) values (%s, %s, %s, %s, %s);')
-            print(query)
+
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -392,7 +382,7 @@ class database:
             value = (tempType, tempRef, tempRefDate, str(entry_id))
             query = (
                 'insert into  reference (type, ref, ref_Date, entry_id) values (%s, %s, %s, %s);')
-            print(query)
+
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -416,7 +406,7 @@ class database:
             value = (tempRefBiblType, tempRefBibl, str(reference_id), str(entry_id))
             query = (
                 'insert into  bibliography (type, bibl, ref_date, reference_id)  values (%s, %s, %s, %s);')
-            print(query)
+
             self.cursor.execute(query, value)
             self.cnx.commit()
             print(self.cursor.statement)
@@ -432,7 +422,7 @@ class database:
             value = (id)
             query = (
                 "select entry_id from entry where id =%s;")
-            print(query)
+
             self.cursor.execute(query, value)
             for rec in self.cursor:
                 entry_id = rec[0]
@@ -449,7 +439,7 @@ class database:
             value = (id)
             query = (
                 "select entry_id from entry where id=%s;")
-            print(query)
+
             self.cursor.execute(query, value)
             for rec in self.cursor:
                 entry_id = rec[0]

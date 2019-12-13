@@ -25,7 +25,7 @@ foreign key(entry_id) references entry(entry_id)
 create table orth(
 orth_id int auto_increment,
 type varchar(200),
-orth varchar(20),
+orth varchar(200),
 form_id int,
 primary key (orth_id),
 foreign key(form_id) references form(form_id)
@@ -35,7 +35,7 @@ foreign key(form_id) references form(form_id)
 create table grammar_group(
 grammar_group_id int auto_increment,
 gram varchar(200),
-pos varchar(100),
+pos varchar(200),
 entry_id int,
 primary key (grammar_group_id),
 foreign key(entry_id) references entry(entry_id)
