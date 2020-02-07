@@ -282,6 +282,35 @@ class database:
 
         return cur_id
 
+
+    def saveEtym(self, entry_id, etymResp, etymCorresp, etymText):
+        tempetymResp = ""
+        tempEtymCorresp = ""
+        tempEtymText = ""
+
+        if len(etymResp) > 0:
+            tempEtymResp = etymResp[0]
+        if len(etymCorresp) > 0:
+            tempEtymCorresp = etymCorresp[0]
+        if len(etymText) > 0:
+            tempEtymText = etymText[0]
+        cur_id = None
+        try:
+            print("Saving Etym", entry_id, etymResp,etymCorresp,etymText)
+            value = ( tempEtymResp, tempEtymCorresp, tempEtymText, str(entry_id))
+            query = (
+                'insert into  etymology ( resp, corresp,text,entry_id) values (%s, %s, %s, %s);')
+
+            self.cursor.execute(query, value)
+            self.cnx.commit()
+            print(self.cursor.statement)
+            cur_id = self.cursor.lastrowid
+        except mysql.connector.Error as err:
+            print(colored(err, 'red'))
+
+        return cur_id
+
+
     def saveCitation(self, entry_id, citType, citNo):
         tempCitType = ""
         tempCitNo = ""
@@ -414,6 +443,22 @@ class database:
         except mysql.connector.Error as err:
             print(colored(err, 'red'))
         return cur_id
+
+
+    def saveQuestionEntry(self, entry_id, questionnaire_no, quest_no, quest):
+        try:
+            print("Saving Entry Quest========\n\n\n\n", entry_id, questionnaire_no, quest_no, quest)
+            value = (entry_id, questionnaire_no, quest_no, quest)
+            query = (
+                'insert into  question_entry (entry_id, questionnaire_no, question_no, question) values (%s, %s, %s, %s);')
+            self.cursor.execute(query, value)
+            self.cnx.commit()
+            print(self.cursor.statement)
+        except mysql.connector.Error as err:
+            print(colored(err, 'red'))
+
+        return 0
+
 
     def getEntryId(self, id):
         entry_id = ""
