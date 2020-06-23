@@ -16,7 +16,7 @@ class KeyWords:
         records = []
 
         try:
-            cnx = mysql.connector.connect(user='root', password='ExploreAt!dbo2017'
+            cnx = mysql.connector.connect(user='root', password='pwd here'
                                           , host='127.0.0.1',
                                           database='c1Topothek')
             cursor = cnx.cursor()
