@@ -8,7 +8,7 @@ import MySQLdb
 class WordList:
 
     user = 'root'
-    password = 'ExploreAt!dbo2017'
+    password = 'pwd here'
     host = '127.0.0.1'
     db = 'dboe2018'
 
